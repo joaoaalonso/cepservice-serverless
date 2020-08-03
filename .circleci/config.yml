@@ -1,0 +1,38 @@
+version: 2
+jobs:
+  deploy:
+    docker:
+      - image: circleci/node:latest
+    working_directory: /tmp/service
+    steps:
+      - checkout
+      - restore_cache:
+          name: Restore dependencies cache
+          keys:
+            - yarn-packages-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install Serverless CLI
+          command: sudo npm i -g serverless
+      - run:
+          name: Install dependencies
+          command: yarn install
+      - run:
+          name: Run tests
+          command: yarn test
+      - run:
+          name: Deploy
+          command: sls deploy
+      - save_cache:
+          name: Save dependencies cache
+          key: yarn-packages-{{ checksum "yarn.lock" }}
+          paths:
+            - ./node_modules
+workflows:
+  version: 2
+  deploy:
+    jobs:
+      - deploy:
+          filters:
+            branches:
+              only: 
+                - master
