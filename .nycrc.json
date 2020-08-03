@@ -1,0 +1,15 @@
+{
+    "reporter": [
+        "lcov",
+        "text"
+    ],
+    "include": [
+        "src"
+    ],
+    "exclude": [
+        "src/**/*.spec.ts"
+    ],
+    "sourceMap": true,
+    "instrucment": true,
+    "all": true
+}
