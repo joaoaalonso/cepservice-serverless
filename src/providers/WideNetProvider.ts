@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-import { injectable } from '../config/ioc'
-import { CepProvider } from './CepProvider'
+import { injectable } from 'config/ioc'
+import { CepProvider } from 'providers/CepProvider'
 
 interface WideNet {
   status: number;

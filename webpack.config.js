@@ -1,6 +1,7 @@
 const path = require('path')
 const slsw = require('serverless-webpack')
 const nodeExternals = require('webpack-node-externals')
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 
 module.exports = {
@@ -11,7 +12,8 @@ module.exports = {
   resolve: {
     extensions: ['.mjs', '.json', '.ts'],
     symlinks: false,
-    cacheWithContext: false
+    cacheWithContext: false,
+    plugins: [new TsconfigPathsPlugin()]
   },
   output: {
     libraryTarget: 'commonjs',

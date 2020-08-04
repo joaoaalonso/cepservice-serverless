@@ -1,6 +1,6 @@
-import { promiseAny } from '../utils/promiseAny'
-import { injectable, injectAll } from '../config/ioc'
-import { CepProvider } from '../providers/CepProvider'
+import { promiseAny } from 'utils/promiseAny'
+import { injectable, injectAll } from 'config/ioc'
+import { CepProvider } from 'providers/CepProvider'
 
 @injectable()
 export class CepService {

@@ -1,8 +1,8 @@
 import { APIGatewayEvent } from 'aws-lambda'
 
-import { autoInjectable } from '../../config/ioc'
-import { CepService } from '../../services/CepService'
-import { jsonResponse } from '../response/jsonResponse'
+import { autoInjectable } from 'config/ioc'
+import { CepService } from 'services/CepService'
+import { jsonResponse } from 'http/response/jsonResponse'
 
 @autoInjectable()
 export class CepController {

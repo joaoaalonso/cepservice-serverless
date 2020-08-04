@@ -6,6 +6,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "sourceMap": true,
+    "baseUrl": "./src",
     "types": [
       "node",
       "reflect-metadata"

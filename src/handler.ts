@@ -1,9 +1,9 @@
 import 'source-map-support/register'
 import { APIGatewayProxyHandler } from 'aws-lambda'
 
-import { container } from './config/ioc'
+import { container } from 'config/ioc'
 
-import { CepController } from './http/controllers/CepController'
+import { CepController } from 'http/controllers/CepController'
 
 const cepController = container.resolve(CepController)
 
