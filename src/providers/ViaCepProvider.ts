@@ -1,5 +1,6 @@
 import axios from 'axios'
 
+import { injectable } from '../config/ioc'
 import { CepProvider } from './CepProvider'
 
 interface ViaCep {
@@ -14,6 +15,7 @@ interface ViaCep {
     gia: string;
 }
 
+@injectable()
 export class ViaCepProvider implements CepProvider {
   async find (postalCode: string): Promise<PostalCode> {
     const uri = `https://viacep.com.br/ws/${postalCode}/json/unicode/`

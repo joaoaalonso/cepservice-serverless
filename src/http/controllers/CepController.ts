@@ -1,18 +1,16 @@
 import { APIGatewayEvent } from 'aws-lambda'
 
-import { jsonResponse } from '../response/jsonResponse'
+import { autoInjectable } from '../../config/ioc'
 import { CepService } from '../../services/CepService'
+import { jsonResponse } from '../response/jsonResponse'
 
+@autoInjectable()
 export class CepController {
-  private cepSerivce: CepService
-
-  constructor (cepSerivce: CepService) {
-    this.cepSerivce = cepSerivce
-  }
+  constructor (private cepService: CepService) {}
 
   async show (event: APIGatewayEvent) {
     const { cep } = event.pathParameters
-    const result = await this.cepSerivce.find(cep)
+    const result = await this.cepService.find(cep)
     return jsonResponse(result)
   }
 }

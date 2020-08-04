@@ -1,5 +1,6 @@
 import axios from 'axios'
 
+import { injectable } from '../config/ioc'
 import { CepProvider } from './CepProvider'
 
 interface WideNet {
@@ -13,6 +14,7 @@ interface WideNet {
   statusText: string;
 }
 
+@injectable()
 export class WideNetProvider implements CepProvider {
   async find (postalCode: string): Promise<PostalCode> {
     const uri = `http://apps.widenet.com.br/busca-cep/api/cep.json?code=${postalCode}`

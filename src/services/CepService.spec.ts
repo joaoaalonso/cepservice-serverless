@@ -1,4 +1,5 @@
 import 'mocha'
+import 'reflect-metadata'
 import { expect } from 'chai'
 
 import { CepService } from './CepService'

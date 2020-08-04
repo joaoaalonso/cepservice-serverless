@@ -5,12 +5,14 @@
   "main": "handler.js",
   "scripts": {
     "start": "sls offline start",
-    "test": "cross-env TS_NODE_FILES=true nyc mocha -r ts-node/register src/**/*.spec.ts"
+    "test": "TS_NODE_FILES=true nyc mocha -r ts-node/register src/**/*.spec.ts"
   },
   "dependencies": {
     "axios": "^0.19.2",
+    "reflect-metadata": "^0.1.13",
     "serverless-offline": "^6.5.0",
-    "source-map-support": "^0.5.10"
+    "source-map-support": "^0.5.10",
+    "tsyringe": "^4.3.0"
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.17",

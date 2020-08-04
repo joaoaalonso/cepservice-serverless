@@ -1,11 +1,17 @@
 {
   "compilerOptions": {
-    "lib": ["es2017"],
+    "lib": ["es6"],
     "removeComments": true,
     "moduleResolution": "node",
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "sourceMap": true,
+    "types": [
+      "node",
+      "reflect-metadata"
+    ],
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "target": "es2017",
     "outDir": "lib"
   },
