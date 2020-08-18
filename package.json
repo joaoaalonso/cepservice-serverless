@@ -5,7 +5,7 @@
   "main": "handler.js",
   "scripts": {
     "start": "sls offline start",
-    "test": "TS_NODE_FILES=true nyc mocha -r ts-node/register src/**/*.spec.ts"
+    "test": "cross-env TS_NODE_FILES=true nyc mocha -r ts-node/register src/**/*.spec.ts"
   },
   "dependencies": {
     "axios": "^0.19.2",
@@ -23,6 +23,7 @@
     "@typescript-eslint/eslint-plugin": "^3.7.1",
     "@typescript-eslint/parser": "^3.7.1",
     "chai": "^4.2.0",
+    "cross-env": "^7.0.2",
     "eslint": "^7.5.0",
     "eslint-config-standard": "^14.1.1",
     "eslint-plugin-import": "^2.22.0",
